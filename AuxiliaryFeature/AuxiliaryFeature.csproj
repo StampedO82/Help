@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3DE0797-4979-4C32-8DB8-6A731A3FDD0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AuxiliaryFeature</RootNamespace>
+    <AssemblyName>AuxiliaryFeature</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalLibraries\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DiskManagement\DirectoryManager.cs" />
+    <Compile Include="DiskManagement\Drive.cs" />
+    <Compile Include="DiskManagement\FileManager.cs" />
+    <Compile Include="Utility\StringCipher.cs" />
+    <Compile Include="Exceptions\BaseException.cs" />
+    <Compile Include="Exceptions\IBaseException.cs" />
+    <Compile Include="Extension\ObservableCollectionEx.cs" />
+    <Compile Include="Extension\StringEx.cs" />
+    <Compile Include="Extension\TaskEx.cs" />
+    <Compile Include="GUI\Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="GUI\Converter\StringToVisibilityConverter.cs" />
+    <Compile Include="GUI\DelegateCommand.cs" />
+    <Compile Include="GUI\Dialogs.cs" />
+    <Compile Include="GUI\TriggerCommand.cs" />
+    <Compile Include="MVVM\Model\ModelNotifyPropertyChanged.cs" />
+    <Compile Include="MVVM\ViewModel\BaseViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\IViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasking\TaskManager.cs" />
+    <Compile Include="Tasking\TaskService.cs" />
+    <Compile Include="Utility\DelegateMethod.cs" />
+    <Compile Include="Utility\MethodManager.cs" />
+    <Compile Include="Utility\MvvmManager.cs" />
+    <Compile Include="Utility\ObjectConverter.cs" />
+    <Compile Include="Utility\ObjectCollector.cs" />
+    <Compile Include="Utility\WindowsServiceManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
